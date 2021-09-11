@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block content %}
+    <h1>List of chats:</h1>
+    {% if chats %}
+        {% for chat in chats %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{chat.chat_title}}</h3>
+                <p>Messages count: {{chat.chat_messages_count}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No chats</p>
+    {% endif %}
+{% endblock %}

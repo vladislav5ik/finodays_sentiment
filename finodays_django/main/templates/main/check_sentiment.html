@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Check sentiment{% endblock %}
+
+{% block content %}
+    <h1>Checking the sentiment of the message</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.message_text }}<br>
+        <button type="submit" class="btn btn-success">Check</button><br>
+        <span>{{ result }}</span>
+    </form>
+{% endblock %}

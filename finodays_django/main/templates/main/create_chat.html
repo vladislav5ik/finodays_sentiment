@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Creating chats{% endblock %}
+
+{% block content %}
+    <h1>Create new chat</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.chat_title }}<br>
+        <button type="submit" class="btn btn-success">Create</button><br>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
